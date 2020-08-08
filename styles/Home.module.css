@@ -1,0 +1,99 @@
+.container {
+  min-height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 100vw;
+  height: 80vh;
+}
+
+.section {
+  height: 80%;
+  flex: 1;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  -webkit-box-shadow: 6px 6px 22px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 22px 0px rgba(0,0,0,0.75);
+  box-shadow: 6px 6px 22px 0px rgba(0,0,0,0.75);
+
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 16px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.title > label{
+  
+  
+  
+  margin-left: 20px;
+}
+
+.send-button {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.drop-zone {
+  height: 40%;
+  width: 90%;
+  margin: auto;
+}
+
+.drop-zone > :first-child{
+  height: 30vh;
+  width: 100%;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.drop-zone > :first-child > p{
+  width: 90%;
+  text-align: center;
+  
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-container > div{
+  margin-bottom: 20px;
+}
+
+.qr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  background-color: #f4f4f4;
+}
+
+.qr > canvas {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
