@@ -33,7 +33,7 @@ export default async (req, res) => {
 
 		fs.unlinkSync(pdfPath);
 		
-		saveData({id, images, title})
+		saveData({id, images, title: !!title ? title : pdf.name})
 		res.send({ id, host, title: !!title ? title : pdf.name });
 	} catch (e) {
 		res.status(500).send({ error: e.message });

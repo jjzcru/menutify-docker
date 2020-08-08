@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3'
+services:
+    app:
+        build: .
+        image: menutify
+        ports:
+            - 3000:3000
+        environment:
+            - HOST=https://4dd2b88856ab.ngrok.io
+        volumes:
+            - ./public/images:/usr/src/app/public/images
+            - ./uploads:/usr/src/app/uploads
+            - ./data.json:/usr/src/app/data.json

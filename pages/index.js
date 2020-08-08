@@ -26,7 +26,6 @@ export default class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		const id = createUUID();
-		console.log(id);
 		this.state = {
 			title: '',
 			id,
@@ -52,7 +51,6 @@ export default class Home extends React.Component {
 	};
 
 	onUploadClick = () => {
-		console.log(`In here i send the file`);
 		this.setState({ isLoading: true });
 		this.sendFile()
 			.then((data) => {
@@ -234,7 +232,6 @@ class QRComponent extends React.Component {
 			error
 		) {
 			if (error) console.error(error);
-			console.log('success!');
 		});
 	}
 	render() {
@@ -247,7 +244,6 @@ class QRComponent extends React.Component {
 }
 
 function ID({ id, onChange }) {
-	console.log(`ID: ${id}`);
 	return (
 		<div className={styles.title}>
 			<Input readOnly value={id} initialValue={id} width="100%">
