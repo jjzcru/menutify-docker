@@ -96,7 +96,7 @@ export default class Home extends React.Component {
 
 					<main className={styles.main}>
 						<Grid.Container gap={2} justify="center">
-							<Grid xs={12}>
+							<Grid xs={20} sm={12}>
 								<Card
 									shadow
 									style={{ width: '100%', height: '100%' }}
@@ -142,23 +142,46 @@ function Data({ data }) {
 	const url = `${host}/menus/${id}`;
 
 	let icon = null;
-	if ('navigator' in window && !!navigator.clipboard) {
-		icon = (
-			<Tooltip
-				text={'Copy'}
-				style={{ cursor: 'pointer' }}
-				onClick={() => {
-					navigator.clipboard.writeText(url);
-					setToast({ text: 'Menu copy to clipboard' });
-				}}
-			>
-				<Copy />
-			</Tooltip>
-		);
+
+	if ('navigator' in window) {
+		if(!!navigator.clipboard) {
+			icon = (
+				<Tooltip
+					text={'Copy'}
+					style={{ cursor: 'pointer' }}
+					onClick={() => {
+						navigator.clipboard.writeText(url);
+						setToast({ text: 'Menu copy to clipboard' });
+					}}
+				>
+					<Copy />
+				</Tooltip>
+			);
+		} else if(navigator.share) {
+			icon = (
+				<div
+					style={{ cursor: 'pointer' }}
+					onClick={async () => {
+						try {
+							await navigator.share({
+								title,
+								url
+							})
+						} catch(e) {
+							console.error(e);
+						}
+						
+					}}
+				>
+					<Copy />
+				</div>
+			);
+		}
+		
 	}
 
 	return (
-		<Grid xs={12}>
+		<Grid xs={20} sm={12}>
 			<Card shadow style={{ width: '100%', height: '100%' }}>
 				<div className={styles['data-container']}>
 					<Input
@@ -288,8 +311,8 @@ function SendButton({ onClick, enable, isLoading }) {
 	if (!!isLoading) {
 		return (
 			<div className={styles['send-button']}>
-				<Button disabled>
-					<Loading />
+				<Button disabled loading>
+					Upload
 				</Button>
 			</div>
 		);
