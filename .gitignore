@@ -106,3 +106,5 @@ dist
 public/images
 
 uploads/
+
+data.json
