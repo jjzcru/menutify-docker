@@ -48,8 +48,8 @@ function Images({ images }) {
 		>
 			{images.map((image, i) => {
 				return (
-					<div>
-						<img src={image} key={i} style={{ height: '80vh', marginLeft: 'auto', marginRight: 'auto', background: 'white' }} />
+					<div key={i}>
+						<img src={image}  style={{ height: '80vh', marginLeft: 'auto', marginRight: 'auto', background: 'white' }} />
 					</div>
 				);
 			})}

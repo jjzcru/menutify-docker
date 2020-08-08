@@ -17,6 +17,7 @@ export default async (req, res) => {
 	const title = req.headers['x-menutify-title'];
 	const host = process.env.HOST || 'http://localhost:3000';
 
+	console.log(`HOST: ${host}`);
 	const form = new formidable.IncomingForm();
 	const uploadDir = './uploads';
 	form.uploadDir = uploadDir; //'./uploads';

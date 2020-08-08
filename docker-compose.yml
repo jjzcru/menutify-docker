@@ -1,5 +1,5 @@
 # docker-compose.yml
-version: '3'
+version: "3"
 services:
     app:
         build: .
@@ -7,7 +7,7 @@ services:
         ports:
             - 3000:3000
         environment:
-            - HOST=https://4dd2b88856ab.ngrok.io
+            - HOST=https://dfb8f9da67ff.ngrok.io
         volumes:
             - ./public/images:/usr/src/app/public/images
             - ./uploads:/usr/src/app/uploads
